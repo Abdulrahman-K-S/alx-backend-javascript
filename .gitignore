@@ -1,11 +1,8 @@
 
-0x01-ES6_promise/.eslintrc.js
-0x01-ES6_promise/babel.config.js
+*/.eslintrc.js
+*/babel.config.js
+*/package-lock.json
+*/package.json
 /0x01-ES6_promise/node_modules
-0x01-ES6_promise/package-lock.json
-0x01-ES6_promise/package.json
-0x02-ES6_classes/.eslintrc.js
-0x02-ES6_classes/babel.config.js
 /0x02-ES6_classes/node_modules
-0x02-ES6_classes/package-lock.json
-0x02-ES6_classes/package.json
+
