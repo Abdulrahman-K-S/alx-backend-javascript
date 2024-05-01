@@ -44,6 +44,7 @@ function createEmployee(salary: number | string): Teacher | Director {
 }
 
 // Task 6. Creating functions specific to employees
+function isDirector(employee: Director | Teacher): employee is Director {
     return (employee) instanceof Director;
 }
 
@@ -59,4 +60,10 @@ function executeWork(employee: Director | Teacher) {
 // Task 7. String literal types
 type Subjects = 'Math' | 'History';
 
-function teachClass(todayClass: Subjects): string
+function teachClass(todayClass: Subjects): string {
+    if (todayClass === 'Math') {
+        return "Teaching Math";
+    } else {
+        return "Teaching History";
+    }
+}
