@@ -35,15 +35,15 @@ class Teacher implements TeacherInterface {
     }
 }
 
-function createEmployee(salary: number | string) {
+function createEmployee(salary: number | string): Teacher | Director {
     if (typeof salary === "number" && salary < 500) {
-        return Teacher
+        return new Teacher()
+    } else {
+        return new Director()
     }
-    return Director
 }
 
 // Task 6. Creating functions specific to employees
-function isDirctor(employee: Director | Teacher) {
     return (employee) instanceof Director;
 }
 
@@ -55,3 +55,8 @@ function executeWork(employee: Director | Teacher) {
         return employee.workTeacherTasks();
     }
 }
+
+// Task 7. String literal types
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string
