@@ -1,3 +1,4 @@
+// Task 5. Advanced types Part 1
 interface DirectorInterface {
     workFromHome(): string,
     getCoffeeBreak(): string,
@@ -39,4 +40,18 @@ function createEmployee(salary: number | string) {
         return Teacher
     }
     return Director
+}
+
+// Task 6. Creating functions specific to employees
+function isDirctor(employee: Director | Teacher) {
+    return (employee) instanceof Director;
+}
+
+function executeWork(employee: Director | Teacher) {
+    if (employee instanceof Director) {
+        return employee.workDirectorTasks();
+    }
+    else {
+        return employee.workTeacherTasks();
+    }
 }
