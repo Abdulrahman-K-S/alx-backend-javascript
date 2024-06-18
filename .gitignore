@@ -6,7 +6,5 @@
 */package.json
 
 # node_modules
-/0x01-ES6_promise/node_modules
-/0x02-ES6_classes/node_modules
-/0x03-ES6_data_manipulation/node_modules
+*/node_modules
 /0x04-TypeScript/*/node_modules
