@@ -19,8 +19,10 @@ const countStudents = (path) => {
     });
 
     for (const field in fields) {
-      if (fields.hasOwnProperty(field)) {
-        console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+      if (fields[field]) {
+        const studentCount = fields[field].length;
+        const studentList = fields[field].join(', ');
+        console.log(`Number of students in ${field}: ${studentCount}. List: ${studentList}`);
       }
     }
   } catch (err) {
