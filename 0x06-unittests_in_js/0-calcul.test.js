@@ -17,4 +17,8 @@ describe('calculateNumber', function () {
     it('should return the numbers added after rounding up both numbers', () => {
         assert.deepStrictEqual(calculateNumber(1.5, 3.7), 6);
     });
+
+    it('should return the added numbres rounded down', () => {
+        assert.deepStrictEqual(calculateNumber(0.1, 0.2), 0);
+    })
 })
