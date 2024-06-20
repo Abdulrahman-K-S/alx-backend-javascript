@@ -8,3 +8,4 @@
 # node_modules
 */node_modules
 /0x04-TypeScript/*/node_modules
+/venv
