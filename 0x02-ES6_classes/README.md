@@ -222,16 +222,17 @@ Solution: [1-make_classrooms.js](1-make_classrooms.js)
 <br>
 
 ### 2. A Course, Getters, and Setters
-mandatory
-Implement a class named HolbertonCourse:
+Implement a class named `HolbertonCourse`:
 
-Constructor attributes:
-name (String)
-length (Number)
-students (array of Strings)
-Make sure to verify the type of attributes during object creation
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
+- Constructor attributes:
+  - `name` (String)
+  - `length` (Number)
+  - `students` (array of Strings)
+- Make sure to verify the type of attributes during object creation
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
 Implement a getter and setter for each attribute.
+
+```js
 bob@dylan:~$ cat 2-main.js
 import HolbertonCourse from "./2-hbtn_course.js";
 
@@ -267,22 +268,25 @@ TypeError: Name must be a string
 TypeError: Length must be a number
     ...
 bob@dylan:~$ 
-Repo:
+```
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 2-hbtn_course.js
+<br>
+
+Solution: [2-hbtn_course.js](2-hbtn_course.js)
+
+<br>
   
 ### 3. Methods, static methods, computed methods names..... MONEY
-mandatory
-Implement a class named Currency:
+Implement a class named `Currency`:
 
 - Constructor attributes:
-code (String)
-name (String)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-Implement a getter and setter for each attribute.
-Implement a method named displayFullCurrency that will return the attributes in the following format name (code).
+  - `code` (String)
+  - `name` (String)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Implement a getter and setter for each attribute.
+- Implement a method named `displayFullCurrency` that will return the attributes in the following format `name (code)`.
+
+```js
 bob@dylan:~$ cat 3-main.js
 import Currency from "./3-currency.js";
 
@@ -293,25 +297,28 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 3-main.js 
 Dollars ($)
 bob@dylan:~$ 
-Repo:
+```
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 3-currency.js
+<br>
+
+Solution: [3-currency.js](3-currency.js)
+
+<br>
   
 ### 4. Pricing
-mandatory
-Import the class Currency from 3-currency.js
+Import the class `Currency` from `3-currency.js`
 
 Implement a class named Pricing:
 
-Constructor attributes:
-amount (Number)
-currency (Currency)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-Implement a getter and setter for each attribute.
-Implement a method named displayFullPrice that returns the attributes in the following format amount currency_name (currency_code).
-Implement a static method named convertPrice. It should accept two arguments: amount (Number), conversionRate (Number). The function should return the amount multiplied by the conversion rate.
+- Constructor attributes:
+  - `amount` (Number)
+  - `currency` (Currency)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Implement a getter and setter for each attribute.
+- Implement a method named `displayFullPrice` that returns the attributes in the following format `amount currency_name (currency_code)`.
+- Implement a static method named `convertPrice`. It should accept two arguments: `amount` (Number), `conversionRate` (Number). The function should return the amount multiplied by the conversion rate.
+
+```js
 bob@dylan:~$ cat 4-main.js
 import Pricing from './4-pricing.js';
 import Currency from './3-currency.js';
@@ -328,22 +335,25 @@ Pricing {
 }
 100 Euro (EUR)
 bob@dylan:~$ 
-Repo:
+```
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 4-pricing.js
+<br>
+
+Solution: [4-pricing.js](4-pricing.js)
+
+<br>
   
 ### 5. A Building
-mandatory
-Implement a class named Building:
+Implement a class named `Building`:
 
-Constructor attributes:
-sqft (Number)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-Implement a getter for each attribute.
-Consider this class as an abstract class. And make sure that any class that extends from it should implement a method named evacuationWarningMessage.
-If a class that extends from it does not have a evacuationWarningMessage method, throw an error with the message Class extending Building must override evacuationWarningMessage
+- Constructor attributes:
+  - `sqft` (Number)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Implement a getter for each attribute.
+- Consider this class as an abstract class. And make sure that any class that extends from it should implement a method named `evacuationWarningMessage`.
+  - If a class that extends from it does not have a `evacuationWarningMessage` method, throw an error with the message Class extending Building must override `evacuationWarningMessage`
+
+```js
 bob@dylan:~$ cat 5-main.js
 import Building from './5-building.js';
 
@@ -365,24 +375,26 @@ Building { _sqft: 100 }
 Error: Class extending Building must override evacuationWarningMessage
     ...
 bob@dylan:~$ 
-Repo:
+```
+<br>
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 5-building.js
-  
+Solution: [5-building.js](5-building.js)
+
+<br>
+
 ### 6. Inheritance
-mandatory
-Import Building from 5-building.js.
+Import `Building` from `5-building.js`.
 
-Implement a class named SkyHighBuilding that extends from Building:
+Implement a class named `SkyHighBuilding` that extends from `Building`:
 
-Constructor attributes:
-sqft (Number) (must be assigned to the parent class Building)
-floors (Number)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-Implement a getter for each attribute.
-Override the method named evacuationWarningMessage and return the following string Evacuate slowly the NUMBER_OF_FLOORS floors.
+- Constructor attributes:
+  - `sqft` (Number) (must be assigned to the parent class `Building`)
+  - `floors` (Number)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Implement a getter for each attribute.
+- Override the method named `evacuationWarningMessage` and return the following string `Evacuate slowly the NUMBER_OF_FLOORS floors`.
+
+```js
 bob@dylan:~$ cat 6-main.js
 import SkyHighBuilding from './6-sky_high.js';
 
@@ -397,21 +409,23 @@ bob@dylan:~$ npm run dev 6-main.js
 60
 Evacuate slowly the 60 floors
 bob@dylan:~$ 
-Repo:
+```
+<br>
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 6-sky_high.js
-  
+Solution: [6-sky_high.js](6-sky_high.js)
+
+<br>
+
 ### 7. Airport
-mandatory
-Implement a class named Airport:
+Implement a class named `Airport`:
 
-Constructor attributes:
-name (String)
-code (String)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-The default string description of the class should return the airport code (example below).
+- Constructor attributes:
+  - `name` (String)
+  - `code` (String)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- The default string description of the class should return the airport `code` (example below).
+
+```js
 bob@dylan:~$ cat 7-main.js
 import Airport from "./7-airport.js";
 
@@ -424,22 +438,25 @@ bob@dylan:~$ npm run dev 7-main.js
 Airport [SFO] { _name: 'San Francisco Airport', _code: 'SFO' }
 [object SFO]
 bob@dylan:~$ 
-Repo:
+```
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 7-airport.js
+<br>
+
+Solution: [7-airport.js](7-airport.js)
+
+<br>
   
 ### 8. Primitive - Holberton Class
-mandatory
-Implement a class named HolbertonClass:
+Implement a class named `HolbertonClass`:
 
-Constructor attributes:
-size (Number)
-location (String)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-When the class is cast into a Number, it should return the size.
-When the class is cast into a String, it should return the location.
+- Constructor attributes:
+  - `size` (Number)
+  - `location` (String)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- When the class is cast into a `Number`, it should return the size.
+- When the class is cast into a `String`, it should return the location.
+
+```js
 bob@dylan:~$ cat 8-main.js
 import HolbertonClass from "./8-hbtn_class.js";
 
@@ -452,16 +469,17 @@ bob@dylan:~$ npm run dev 8-main.js
 12
 Mezzanine
 bob@dylan:~$ 
-Repo:
+```
+<br>
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 8-hbtn_class.js
-  
+Solution: [8-hbtn_class.js](8-hbtn_class.js)
+
+<br>
+
 ### 9. Hoisting
-mandatory
 Fix this code and make it work.
 
+```js
 const class2019 = new HolbertonClass(2019, 'San Francisco');
 const class2020 = new HolbertonClass(2020, 'San Francisco');
 
@@ -508,8 +526,11 @@ export class StudentHolberton {
 
 
 export const listOfStudents = [student1, student2, student3, student4, student5];
+```
+
 Result:
 
+```js
 bob@dylan:~$ cat 9-main.js
 import listOfStudents from "./9-hoisting.js";
 
@@ -557,25 +578,28 @@ bob@dylan:~$ npm run dev 9-main.js
   'Donald Bush - 2019 - San Francisco',
   'Jason Sandler - 2019 - San Francisco'
 ]
-bob@dylan:~$ 
-Repo:
+bob@dylan:~$
+```
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 9-hoisting.js
+<br>
+
+Solution: [9-hoisting.js](9-hoisting.js)
+
+<br>
   
 ### 10. Vroom
-mandatory
-Implement a class named Car:
+Implement a class named `Car`:
 
-Constructor attributes:
-brand (String)
-motor (String)
-color (String)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-Add a method named cloneCar. This method should return a new object of the class.
+- Constructor attributes:
+  - `brand` (String)
+  - `motor` (String)
+  - `color` (String)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Add a method named `cloneCar`. This method should return a new object of the class.
+
 Hint: Symbols in ES6
 
+```js
 bob@dylan:~$ cat 10-main.js
 import Car from "./10-car.js";
 
@@ -600,11 +624,11 @@ TestCar { _brand: undefined, _motor: undefined, _color: undefined }
 true
 false
 bob@dylan:~$ 
-Repo:
+```
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 10-car.js
+<br>
+
+Solution: [10-car.js](10-car.js)
   
 <br>
 
@@ -613,18 +637,19 @@ File: 10-car.js
 <br>
 
 ### 11. EVCar
-#advanced
-Import Car from 10-car.js.
+Import `Car` from `10-car.js`.
 
-Implement a class named EVCar that extends the Car class:
+Implement a class named `EVCar` that extends the `Car` class:
 
-Constructor attributes:
-brand (String)
-motor (String)
-color (String)
-range (String)
-Each attribute must be stored in an “underscore” attribute version (ex: name is stored in _name)
-For privacy reasons, when cloneCar is called on a EVCar object, the object returned should be an instance of Car instead of EVCar.
+- Constructor attributes:
+  - `brand` (String)
+  - `motor` (String)
+  - `color` (String)
+  - `range` (String)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- For privacy reasons, when `cloneCar` is called on a EVCar object, the object returned should be an instance of Car instead of EVCar.
+
+```js
 bob@dylan:~$ cat 100-main.js
 import EVCar from './100-evcar.js';
 
@@ -644,8 +669,8 @@ EVCar {
 }
 Car { _brand: undefined, _motor: undefined, _color: undefined }
 bob@dylan:~$ 
-Repo:
+```
 
-GitHub repository: alx-backend-javascript
-Directory: 0x02-ES6_classes
-File: 100-evcar.js
+<br>
+
+Solution: [100-evcar.js](100-evcar.js)
